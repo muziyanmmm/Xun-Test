@@ -13,7 +13,7 @@
 
 		<script type="text/javascript">
  
-  
+   
 		$(document).ready(function(){ 
 			
 			var index=0;
@@ -32,13 +32,7 @@
 
 			  },4000);
 
-		/*function startCir(){
-			show(index);
-			    index++;
-			    if(index>=$_picn){index=0;}
-			    var t = setTimeout('startCir()',4000);
-
-		}*/
+		
 
 		/*渐隐渐显函数*/
 		function show(index){
@@ -53,22 +47,67 @@
 			}
 
 			/*鼠标控制*/
-		$(".try").mousedown(function(){
-  				$(this).css("opacity","1.0");
+		$("#myCanvasFir").mousedown(function(){
+  				$("#myCanvasFir").css("opacity","1.0");
+  				$("#myCanvasSec").css("opacity","1.0");
+  				$("#myCanvasThir").css("opacity","1.0");
   				var dax=index+1;
   				showw(dax);
-
   			})
-		$(".try").mouseup(function(){
-			$(this).css("opacity","0.6");
+		$("#myCanvasSec").mousedown(function(){
+  				$("#myCanvasFir").css("opacity","1.0");
+  				$("#myCanvasSec").css("opacity","1.0");
+  				$("#myCanvasThir").css("opacity","1.0");
+  				var dax=index+1;
+  				showw(dax);
+  			})
+		$("#myCanvasThir").mousedown(function(){
+  				$("#myCanvasFir").css("opacity","1.0");
+  				$("#myCanvasSec").css("opacity","1.0");
+  				$("#myCanvasThir").css("opacity","1.0");
+  				var dax=index+1;
+  				showw(dax);
+  			})
+
+		$("#myCanvasFir").mouseup(function(){
+			$("#myCanvasFir").css("opacity","0.6");
+  			$("#myCanvasSec").css("opacity","0.6");
+  			$("#myCanvasThir").css("opacity","0.6");
 		})
-		$(".try").mouseout(function(){
+		$("#myCanvasFir").mouseout(function(){
 			$(this).css("opacity","0.4");
 		})
-		$(".try").mouseover(function(){
+		$("#myCanvasFir").mouseover(function(){
 			$(this).css("opacity","0.6");
 		})
 
+
+
+		$("#myCanvasSec").mouseup(function(){
+			$("#myCanvasFir").css("opacity","0.6");
+  			$("#myCanvasSec").css("opacity","0.6");
+  			$("#myCanvasThir").css("opacity","0.6");
+		})
+		$("#myCanvasSec").mouseout(function(){
+			$(this).css("opacity","0.4");
+		})
+		$("#myCanvasSec").mouseover(function(){
+			$(this).css("opacity","0.6");
+		})
+
+		
+
+		$("#myCanvasThir").mouseup(function(){
+			$("#myCanvasFir").css("opacity","0.6");
+  			$("#myCanvasSec").css("opacity","0.6");
+  			$("#myCanvasThir").css("opacity","0.6");
+		})
+		$("#myCanvasThir").mouseout(function(){
+			$(this).css("opacity","0.4");
+		})
+		$("#myCanvasThir").mouseover(function(){
+			$(this).css("opacity","0.6");
+		})
 
 
 	    /*按钮函数*/
@@ -86,12 +125,44 @@
 			else{
 				$(".pic").eq(dax).fadeIn(500).siblings(".pic").fadeOut(500);
 				index=index+2;
-				show(index);
-				
-			}	
-
+				show(index);	
+				}	
 			}
 		
+			/*画圆函数*/
+			/*function cirl(){*/
+				var c1=document.getElementById("myCanvasFir");
+				var cx1=c1.getContext("2d");
+				cx1.fillStyle="#a05f23";
+				cx1.strokeStyle="#a05f23";
+
+				cx1.beginPath();
+				cx1.arc(20, 78, 20, 0, Math.PI*2, true);
+				cx1.fill();
+
+				var c2=document.getElementById("myCanvasSec");
+				var cx2=c2.getContext("2d");
+				cx2.fillStyle="#a05f23";
+				cx2.strokeStyle="#a05f23";
+
+				cx2.beginPath();
+				cx2.arc(17, 48, 15, 0, Math.PI*2, true);
+				cx2.fill();
+
+				var c3=document.getElementById("myCanvasThir");
+				var cx3=c3.getContext("2d");
+				cx3.fillStyle="#a05f23";
+				cx3.strokeStyle="#a05f23";
+
+				cx3.beginPath();
+				cx3.arc(20, 15, 13, 0, Math.PI*2, true);
+				cx3.fill();
+				
+				
+				/*cxt.stroke();*/
+				/*}*/
+			
+
 		})
 
 	</script>
@@ -101,7 +172,7 @@
 
 	</head>
 
-	<body bgcolor="#000000" onload="startCir()"> 
+	<body bgcolor="#000000"> 
 		主体开始
 				<div class="lsy-n1-bgpic">
 					<img src="../image/D1.jpg" style="width:101.5%; height=100%;" >
@@ -130,11 +201,22 @@
 
 
 				<!--通过修改透明度体现鼠标悬停在按钮上，按下时也是改变颜色透明度-->
-				<div class="try">  
+				<!-- <div class="try">  
 					<a href="#" title="Change background">
 						<img src="../image/yy.png" style="width:100%; height=100%;" > 
 					</a>
-				</div>
+				</div> -->
+				<canvas id="myCanvasFir" width="100%" height="100%">
+				Your browser does not support the canvas element.
+				</canvas>
+
+				<canvas id="myCanvasSec" width="100%" height="100%">
+				Your browser does not support the canvas element.
+				</canvas>
+
+				<canvas id="myCanvasThir" width="100%" height="100%">
+				Your browser does not support the canvas element.
+				</canvas>
 
 				<!--第二个页面-->
 				<!-- <div class="lsy-p2"> 
