@@ -33,21 +33,21 @@ $(document).ready(function(){
 		  				$("#myCanvasFir").css("opacity","1.0");
 		  				$("#myCanvasSec").css("opacity","1.0");
 		  				$("#myCanvasThir").css("opacity","1.0");
-		  				var ddx=index-1;
+		  				var ddx=index+1;
 		  				showwRight(ddx);
 		  			})
 				$("#myCanvasSec").mousedown(function(){
 		  				$("#myCanvasFir").css("opacity","1.0");
 		  				$("#myCanvasSec").css("opacity","1.0");
 		  				$("#myCanvasThir").css("opacity","1.0");
-		  				var ddx=index-1;
+		  				var ddx=index+1;
 		  				showwRight(ddx);
 		  			})
 				$("#myCanvasThir").mousedown(function(){
 		  				$("#myCanvasFir").css("opacity","1.0");
 		  				$("#myCanvasSec").css("opacity","1.0");
 		  				$("#myCanvasThir").css("opacity","1.0");
-		  				var ddx=index-1;
+		  				var ddx=index+1;
 		  				showwRight(ddx);
 		  			})
 
